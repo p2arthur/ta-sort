@@ -12,7 +12,6 @@ export class Sorter {
         const shouldSwap = this.collection.compare(j, j + 1);
         if (shouldSwap) {
           this.collection.swap(j, j + 1);
-          console.log(this.collection.data);
         }
       }
     }
