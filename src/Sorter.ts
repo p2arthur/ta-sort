@@ -1,7 +1,6 @@
 import { NumberCollection } from './NumbersCollection';
 
 export interface Sortable {
-  data: number[];
   length: number;
   compare(leftIndex: number, rightIndex: number): boolean;
   swap(leftIndex: number, rightIndex: number): void;
