@@ -8,7 +8,7 @@ export interface Sortable {
 }
 
 export class Sorter {
-  constructor(public collection: NumberCollection) {}
+  constructor(public collection: Sortable) {}
 
   //Bubble sort
   public sortCollection(): void {
