@@ -1,4 +1,4 @@
-import { Sortable } from './Sorter';
+import { Sorter } from './Sorter';
 
 class Node {
   public next: Node | null = null;
@@ -6,7 +6,7 @@ class Node {
   constructor(public data: number) {}
 }
 
-export class LinkedList implements Sortable {
+export class LinkedList extends Sorter {
   head: Node | null = null;
 
   public add(data: number): void {
@@ -62,16 +62,15 @@ export class LinkedList implements Sortable {
     if (!this.head) {
       throw new Error('List is empty');
     }
-
     return this.at(leftIndex).data > this.at(rightIndex).data;
   }
 
   swap(leftIndex: number, rightIndex: number): void {
-    const leftHand = this.at(leftIndex);
-    const rightHand = this.at(rightIndex);
+    const leftHand = this.at(leftIndex).data;
+    const righHand = this.at(rightIndex).data;
 
-    this.at(leftIndex).data = rightHand.data;
-    this.at(rightIndex).data = leftHand.data;
+    this.at(leftIndex).data = righHand;
+    this.at(rightIndex).data = leftHand;
   }
 
   print(): void {
@@ -85,4 +84,6 @@ export class LinkedList implements Sortable {
       node = node.next;
     }
   }
+
+  sort() {}
 }
